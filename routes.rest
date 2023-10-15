@@ -1,0 +1,27 @@
+// LOCALHOST
+###
+GET http://localhost:3000/fantasy
+
+###
+
+GET http://localhost:3000/fantasy/652b6a27b922bb45bbab4b03
+
+###
+POST http://localhost:3000/fantasy HTTP/1.1
+content-Type: application/json
+
+{
+        "firstName": "Puka",
+        "lastName": "Nacua",
+        "position": "Wide Reciever",
+        "teamOn": "Rams",
+        "rushingYards": 4,
+        "passYards": 0,
+        "receptions": 46,
+        "receivingYards": 572,
+        "rushingTouchdowns": 0,
+        "passingTouchdowns": 0,
+        "receivingTouchdowns": 2,
+        "totalPoints": 115.60,
+        "positionRank": 3
+}
