@@ -5,7 +5,7 @@ const doc = {
     title: 'My API',
     description: 'Fantasy API'
   },
-  host: 'cse341-tu0r.onrender.com',
+  host: 'fantasytracker.onrender.com',
   schemes: ['https']
 };
 

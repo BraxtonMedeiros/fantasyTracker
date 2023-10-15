@@ -5,7 +5,7 @@
     "description": "Fantasy API",
     "version": "1.0.0"
   },
-  "host": "cse341-tu0r.onrender.com",
+  "host": "fantasytracker.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
