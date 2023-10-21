@@ -11,17 +11,40 @@ POST http://localhost:3000/fantasy HTTP/1.1
 content-Type: application/json
 
 {
-        "firstName": "Puka",
-        "lastName": "Nacua",
+        "firstName": "Tyreek",
+        "lastName": "Hill",
         "position": "Wide Reciever",
-        "teamOn": "Rams",
-        "rushingYards": 4,
+        "teamOn": "Dolphins",
+        "rushingYards": 14,
         "passYards": 0,
-        "receptions": 46,
-        "receivingYards": 572,
+        "receptions": 36,
+        "receivingYards": 651,
         "rushingTouchdowns": 0,
         "passingTouchdowns": 0,
-        "receivingTouchdowns": 2,
-        "totalPoints": 115.60,
-        "positionRank": 3
+        "receivingTouchdowns": 5,
+        "totalPoints": 132.50,
+        "positionRank": 1
 }
+
+###
+PUT http://localhost:3000/fantasy/652b7eddaa4639e3bf8c5f32 HTTP/1.1
+Content-Type: application/json
+
+{
+        "firstName": "Tyreek",
+        "lastName": "Hill",
+        "position": "Wide Reciever",
+        "teamOn": "Dolphins",
+        "rushingYards": 14,
+        "passYards": 0,
+        "receptions": 42,
+        "receivingYards": 814,
+        "rushingTouchdowns": 0,
+        "passingTouchdowns": 0,
+        "receivingTouchdowns": 6,
+        "totalPoints": 160.80,
+        "positionRank": 1
+}
+
+###
+DELETE http://localhost:3000/fantasy/65339046482ecdd085d5efee HTTP/1.1

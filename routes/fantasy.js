@@ -7,10 +7,10 @@ router.get('/', fantasyController.getAll);
 
 router.get('/:id', fantasyController.getSingle);
 
-router.post('/', fantasyController.createContact);
+router.post('/', fantasyController.createPlayer);
 
-router.put('/:id', fantasyController.updateContact);
+router.put('/:id', fantasyController.updatePlayer);
 
-router.delete('/:id', fantasyController.deleteContact);
+router.delete('/:id', fantasyController.deletePlayer);
 
 module.exports = router;

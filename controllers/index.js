@@ -30,7 +30,7 @@ const getSingle = async (req, res, next) => {
   };
 };
 
-const createContact = async (req, res) => {
+const createPlayer = async (req, res) => {
   try {
     const player = {
       firstName: req.body.firstName,
@@ -59,22 +59,30 @@ const createContact = async (req, res) => {
   };
 }
 
-const updateContact = async (req, res) => {
+const updatePlayer = async (req, res) => {
   try {
     const userId = new ObjectId(req.params.id);
     // be aware of updateOne if you only want to update specific fields
-    const contact = {
+    const player = {
       firstName: req.body.firstName,
       lastName: req.body.lastName,
-      email: req.body.email,
-      favoriteColor: req.body.favoriteColor,
-      birthday: req.body.birthday
+      position: req.body.position,
+      teamOn: req.body.teamOn,
+      rushingYards: req.body.rushingYards,
+      passYards: req.body.passYards,
+      receptions: req.body.receptions,
+      receivingYards: req.body.receivingYards,
+      rushingTouchdowns: req.body.rushingTouchdowns,
+      passingTouchdowns: req.body.passingTouchdowns,
+      receivingTouchdowns: req.body.receivingTouchdowns,
+      totalPoints: req.body.totalPoints,
+      positionRank: req.body.positionRank
     };
     const response = await mongodb
       .getDb()
       .db()
-      .collection('contacts')
-      .replaceOne({ _id: userId }, contact);
+      .collection('fantasy')
+      .replaceOne({ _id: userId }, player);
     console.log(response);
     if (response.modifiedCount > 0) {
       res.status(204).send();
@@ -86,10 +94,10 @@ const updateContact = async (req, res) => {
   };
 };
 
-const deleteContact = async (req, res) => {
+const deletePlayer = async (req, res) => {
   try {
     const userId = new ObjectId(req.params.id);
-    const response = await mongodb.getDb().db().collection('contacts').deleteOne({ _id: userId }, true);
+    const response = await mongodb.getDb().db().collection('fantasy').deleteOne({ _id: userId }, true);
     console.log(response);
     if (response.deletedCount > 0) {
       res.status(204).send();
@@ -101,4 +109,4 @@ const deleteContact = async (req, res) => {
   };
 };
 
-module.exports = { getAll, getSingle, createContact, updateContact, deleteContact };
+module.exports = { getAll, getSingle, createPlayer, updatePlayer, deletePlayer };

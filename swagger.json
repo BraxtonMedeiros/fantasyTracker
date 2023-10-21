@@ -132,13 +132,37 @@
                 "lastName": {
                   "example": "any"
                 },
-                "email": {
+                "position": {
                   "example": "any"
                 },
-                "favoriteColor": {
+                "teamOn": {
                   "example": "any"
                 },
-                "birthday": {
+                "rushingYards": {
+                  "example": "any"
+                },
+                "passYards": {
+                  "example": "any"
+                },
+                "receptions": {
+                  "example": "any"
+                },
+                "receivingYards": {
+                  "example": "any"
+                },
+                "rushingTouchdowns": {
+                  "example": "any"
+                },
+                "passingTouchdowns": {
+                  "example": "any"
+                },
+                "receivingTouchdowns": {
+                  "example": "any"
+                },
+                "totalPoints": {
+                  "example": "any"
+                },
+                "positionRank": {
                   "example": "any"
                 }
               }
