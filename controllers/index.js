@@ -1,5 +1,12 @@
 const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
+const { body, validationResult } = require('express-validator');
+// Validation rules for the request body
+const validationRules = [
+  body('firstName').not().isEmpty().withMessage('First name is required'),
+  body('position').not().isEmpty().withMessage('Position is required'),
+  // Add more validation rules for other fields
+];
 
 const getAll = async (req, res, next) => {
   try {
@@ -32,6 +39,12 @@ const getSingle = async (req, res, next) => {
 
 const createPlayer = async (req, res) => {
   try {
+
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
     const player = {
       firstName: req.body.firstName,
       lastName: req.body.lastName,
@@ -109,4 +122,4 @@ const deletePlayer = async (req, res) => {
   };
 };
 
-module.exports = { getAll, getSingle, createPlayer, updatePlayer, deletePlayer };
+module.exports = { getAll, getSingle, createPlayer, updatePlayer, deletePlayer, validationRules };
