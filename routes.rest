@@ -11,7 +11,7 @@ POST http://localhost:3000/fantasy HTTP/1.1
 content-Type: application/json
 
 {
-        "firstName": "Tyreek",
+        "firstName": "",
         "lastName": "Hill",
         "position": "Wide Reciever",
         "teamOn": "Dolphins",
@@ -47,4 +47,4 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:3000/fantasy/65339046482ecdd085d5efee HTTP/1.1
+DELETE http://localhost:3000/fantasy/65339c2763c04588d5ec0f90 HTTP/1.1

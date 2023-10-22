@@ -1,23 +1,19 @@
 const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
-const { body, validationResult } = require('express-validator');
-// Validation rules for the request body
-const validationRules = [
-  body('firstName').not().isEmpty().withMessage('First name is required'),
-  body('position').not().isEmpty().withMessage('Position is required'),
-  // Add more validation rules for other fields
-];
 
-const getAll = async (req, res, next) => {
-  try {
-    const result = await mongodb.getDb().db().collection('fantasy').find();
-    result.toArray().then((lists) => {
-      res.setHeader('Content-Type', 'application/json');
+const getAll = async (req, res) => {
+    const result = await mongodb
+    .getDb()
+    .db()
+    .collection('fantasy')
+    .find()
+    .toArray((err, lists) => {
+      if (err) {
+        res.status(400).json({ message: err });
+      }
+      res.setHeader('Content-Type', 'application/json')
       res.status(200).json(lists);
     });
-  } catch (err){
-    res.status(500).json({ message: err.message });
-  };
 };
 
 const getSingle = async (req, res, next) => {
@@ -39,12 +35,6 @@ const getSingle = async (req, res, next) => {
 
 const createPlayer = async (req, res) => {
   try {
-
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
-    }
-
     const player = {
       firstName: req.body.firstName,
       lastName: req.body.lastName,
@@ -74,6 +64,10 @@ const createPlayer = async (req, res) => {
 
 const updatePlayer = async (req, res) => {
   try {
+    if (!ObjectId.isValid(req.params.id)) {
+      res.status(400).json('Must use a valid player id to update a player.');
+    }
+
     const userId = new ObjectId(req.params.id);
     // be aware of updateOne if you only want to update specific fields
     const player = {
@@ -109,6 +103,10 @@ const updatePlayer = async (req, res) => {
 
 const deletePlayer = async (req, res) => {
   try {
+    if (!ObjectId.isValid(req.params.id)) {
+      res.status(400).json('Must use a valid player id to delete a player.');
+    }
+
     const userId = new ObjectId(req.params.id);
     const response = await mongodb.getDb().db().collection('fantasy').deleteOne({ _id: userId }, true);
     console.log(response);
@@ -122,4 +120,4 @@ const deletePlayer = async (req, res) => {
   };
 };
 
-module.exports = { getAll, getSingle, createPlayer, updatePlayer, deletePlayer, validationRules };
+module.exports = { getAll, getSingle, createPlayer, updatePlayer, deletePlayer };
