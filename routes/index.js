@@ -27,7 +27,7 @@ router.get('/profile', requiresAuth(), (req, res) => {
     res.send(JSON.stringify(req.oidc.user));
   });
 
-router.use('/fantasy', require('./fantasy'));
 router.use('/', require('./swagger'));
+router.use('/fantasy', require('./fantasy'));
 
 module.exports = router;
