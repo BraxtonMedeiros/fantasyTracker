@@ -4,7 +4,7 @@ I have grown up playing football. I grew up in a football-heavy community and ha
 
 I decided to write a program to track the stats of certain players I have on my team. The reason for this is because I want to compare stats at the end of the season so I can prepare for next season! I really want to get ahead of the curve, and I feel like I can do that by tracking the stats of players.
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video]([http://youtube.link.goes.here](https://youtu.be/AchVE8HDl_s))
 
 # Cloud Database
 
