@@ -1,38 +1,29 @@
 # Overview
 
-{Important! Do not say in this section that this is college assignment. Talk about what you are trying to accomplish as a software engineer to further your learning.}
+I have grown up playing football. I grew up in a football heavy community and have loved the sport since I was a kid! I wanted to play in the NFL for a long time but I am 5'7" so my chances of going to the NFL are slim to none. So now days as an adult, I watch Fantasy football to fill that void. A quick run down of fantasy football is you draft certain players on your team. Depending on how the player does in their game that week determines how many points you get. You then play against your friends every week till the end of the NFL season
 
-{Provide a description of the software that you wrote and how it integrates with a Cloud Database. Describe how to use your program.}
-
-{Describe your purpose for writing this software.}
-
-{Provide a link to your YouTube demonstration. It should be a 4-5 minute demo of the software running, a walkthrough of the code, and a view of the cloud database.}
+I decided to write a program to track the stats of certain players I have on my team. The reason for this is because I want to compare stats at the end of the season so i can prepare for next season! I really want to get ahead of the curve and I feel like I can do that by tracking the stats of players.
 
 [Software Demo Video](http://youtube.link.goes.here)
 
 # Cloud Database
 
-{Describe the cloud database you are using.}
+I decided to use MongoDB.
 
-{Describe the structure of the database that you created.}
+MongoDB uses collections to store the data. It stores it as a JSON object
 
 # Development Environment
 
-{Describe the tools that you used to develop the software}
+Like I said earlier, I used MongoDB as the database. I went with MERN stack. So I used Express, and Node.js. I also use Swagger to demonstate how to do API calls. I also use AUTH0 to require a login
 
-{Describe the programming language that you used and any libraries.}
+I used javascript with Node.js framework
 
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
-
-- [Web Site Name](http://url.link.goes.here)
-- [Web Site Name](http://url.link.goes.here)
+- [W3schools](https://www.w3schools.com/)
+- [MongoDB](https://www.mongodb.com/mern-stack)
 
 # Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
-
-- Item 1
-- Item 2
-- Item 3
+- Find an easier way to input data so it is faster
+- FInd a way to compare data
