@@ -1,8 +1,4 @@
-const express = require('express');
-const router = express.Router();
-const app = express();
-const { auth } = require('express-openid-connect');
-const { requiresAuth } = require('express-openid-connect');
+const { auth, requiresAuth } = require('express-openid-connect');
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -15,19 +11,22 @@ const config = {
     issuerBaseURL: process.env.AUTH0_ISSUER_BASE_URL
 };
 
+const express = require('express');
+const router = express.Router();
+
 // auth router attaches /login, /logout, and /callback routes to the baseURL
-app.use(auth(config));
+router.use(auth(config));
 
 // req.isAuthenticated is provided from the auth router
-app.get('/checkLoginStatus', (req, res) => {
+router.get('/checkLoginStatus', (req, res) => {
   res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
 });
 
-app.get('/profile', requiresAuth(), (req, res) => {
+router.get('/profile', requiresAuth(), (req, res) => {
     res.send(JSON.stringify(req.oidc.user));
   });
 
 router.use('/', require('./swagger'));
 router.use('/fantasy', require('./fantasy'));
 
-module.exports = router;
+module.exports = router, requiresAuth();
