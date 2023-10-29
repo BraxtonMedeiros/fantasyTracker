@@ -1,8 +1,8 @@
 # Overview
 
-I have grown up playing football. I grew up in a football heavy community and have loved the sport since I was a kid! I wanted to play in the NFL for a long time but I am 5'7" so my chances of going to the NFL are slim to none. So now days as an adult, I watch Fantasy football to fill that void. A quick run down of fantasy football is you draft certain players on your team. Depending on how the player does in their game that week determines how many points you get. You then play against your friends every week till the end of the NFL season
+I have grown up playing football. I grew up in a football-heavy community and have loved the sport since I was a kid! I wanted to play in the NFL for a long time, but I am 5'7", so my chances of going to the NFL are slim to none. Nowadays as an adult, I watch Fantasy football to fill that void. A quick rundown of fantasy football is that you draft certain players on your team. Depending on how the player does in their game that week determines how many points you get. You then play against your friends every week until the end of the NFL season.
 
-I decided to write a program to track the stats of certain players I have on my team. The reason for this is because I want to compare stats at the end of the season so i can prepare for next season! I really want to get ahead of the curve and I feel like I can do that by tracking the stats of players.
+I decided to write a program to track the stats of certain players I have on my team. The reason for this is because I want to compare stats at the end of the season so I can prepare for next season! I really want to get ahead of the curve, and I feel like I can do that by tracking the stats of players.
 
 [Software Demo Video](http://youtube.link.goes.here)
 
